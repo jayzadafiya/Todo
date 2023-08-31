@@ -1,0 +1,53 @@
+.todo {
+  width: 100%;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 0.5rem;
+  height: 3.25rem;
+  padding-block: 0.25rem;
+}
+
+.todoOptions {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.btnContainer {
+  height: 0%;
+  align-items: center;
+  gap: 12px;
+  transform: translateX(101%);
+  display: flex;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.active {
+  opacity: 1;
+  height: 100%;
+  transform: translateX(0);
+}
+
+.edit,
+.delete {
+  height: 70%;
+  transition: all 0.15s ease-in-out;
+}
+
+.edit:hover,
+.delete:hover {
+  cursor: pointer;
+  transform: scale(1.15);
+}
+
+.todoDetails span{
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.todoDetails  ul {
+      padding-inline-start: 25px;
+}
