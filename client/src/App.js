@@ -12,7 +12,7 @@ function App() {
   axios.defaults.withCredentials  = true;
   const fetchTodos = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/');
+      const response = await axios.get('https://todo-opal-ten.vercel.app/');
       const todos = response?.data;
       const addedTodos = todos.filter(todo => todo?.type === 'Todo');
       const processTodos = todos.filter(todo => todo?.type === 'Doing');
@@ -36,7 +36,7 @@ function App() {
 
   const addTodo = async (todo) => {
     try {
-      await axios.post('http://localhost:4000/create', todo);
+      await axios.post('https://todo-opal-ten.vercel.app/create', todo);
       fetchTodos();
       toast.success("Todo added successfully.");
 
@@ -48,7 +48,7 @@ function App() {
 
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/delete/${id}`);
+      await axios.delete(`https://todo-opal-ten.vercel.app/delete/${id}`);
       fetchTodos();
       toast.info("Todo deleted successfully.");
     } catch (err) {
@@ -64,7 +64,7 @@ function App() {
   const updateTodo = async (todo) => {
     try {
       const { id, ...updatedData } = todo;
-      await axios.put(`http://localhost:4000/edit/${id}`, updatedData);
+      await axios.put(`https://todo-opal-ten.vercel.app/edit/${id}`, updatedData);
       fetchTodos();
       toast.success("Todo updated successfully.");
     } catch (err) {
@@ -75,7 +75,7 @@ function App() {
 
   const updateTodoList = async (todo) => {
     try {
-      await axios.put("http://localhost:4000/update", todo);
+      await axios.put("https://todo-opal-ten.vercel.app/update", todo);
       toast.success("Todo updated successfully.");
     } catch(error) {
       console.error('Error updating todo:', error);
