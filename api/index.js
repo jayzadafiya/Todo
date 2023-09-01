@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 app.use(cors({
     origin: ["https://todo-frontend.vercel.app/"],
-    methods: ["GET", "POST", "PUT"],
+    methods: ["GET", "POST", "PUT", "DETELE"],
     credentials: true
 }));
 
