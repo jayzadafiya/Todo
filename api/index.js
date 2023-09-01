@@ -2,14 +2,12 @@ const express = require("express");
 const { db } = require("./config");
 const cors = require("cors");
 const app = express();
+app.use(cors({
+    origin: ["https://vercel.com"],
+    methods: ["GET", "POST", "PUT"],
+    credentials: true
+}));
 
-app.use(cors(
-    {
-        origin: ["https://vercel.com/jayzadafiya/todo-frontend"],
-        methods: ["GET", "POST", "PUT",],
-        credentials:true
-    }
-));
 app.use(express.json());
 
 app.get("/", async (req, res) => {
