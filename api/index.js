@@ -10,7 +10,7 @@ app.use(cors({
 
 app.use(express.json());
 
-app.get("/", async (req, res) => {
+app.get("/get", async (req, res) => {
     try {
         const doc = db.collection('todo');
         const docSnapshot = await doc.get();
