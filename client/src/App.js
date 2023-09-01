@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
   const [todoToUpdate, setTodoToUpdate] = useState(null);
   const [group, setGroup] = useState([]);
-  axios.defaults.withCredentials  = true;
+  
   const fetchTodos = async () => {
     try {
       const response = await axios.get('https://todo-opal-ten.vercel.app');
