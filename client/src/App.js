@@ -12,7 +12,7 @@ function App() {
   axios.defaults.withCredentials  = true;
   const fetchTodos = async () => {
     try {
-      const response = await axios.get('https://todo-opal-ten.vercel.app/');
+      const response = await axios.get('https://todo-opal-ten.vercel.app');
       const todos = response?.data;
       const addedTodos = todos.filter(todo => todo?.type === 'Todo');
       const processTodos = todos.filter(todo => todo?.type === 'Doing');
